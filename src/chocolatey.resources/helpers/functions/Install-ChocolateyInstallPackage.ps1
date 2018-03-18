@@ -203,19 +203,6 @@ param(
   $additionalInstallArgs = $env:chocolateyInstallArguments;
   if ($additionalInstallArgs -eq $null) {
     $additionalInstallArgs = '';
-  } else {
-    if ($additionalInstallArgs -match 'INSTALLDIR' -or `
-      $additionalInstallArgs -match 'TARGETDIR' -or `
-      $additionalInstallArgs -match 'dir\=' -or `
-      $additionalInstallArgs -match '\/D\='
-    ) {
-@"
-Pro / Business supports a single, ubiquitous install directory option.
- Stop the hassle of determining how to pass install directory overrides
- to install arguments for each package / installer type.
- Check out Pro / Business - https://chocolatey.org/compare"
-"@ | Write-Warning
-    }
   }
   $overrideArguments = $env:chocolateyInstallOverride;
 
