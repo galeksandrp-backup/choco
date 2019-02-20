@@ -153,6 +153,10 @@ param(
     Write-Debug "Setting the UserAgent to `'$userAgent`'"
     $request.UserAgent = $userAgent
   }
+  
+  if ($Options.CookieContainer) {
+    $request.CookieContainer = $Options.CookieContainer
+  }
 
   Write-Debug "Request Headers:"
   foreach ($key in $request.Headers) {
