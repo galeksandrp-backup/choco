@@ -59,7 +59,7 @@ param(
   [parameter(Mandatory=$false, Position=0)][string] $url = '',
   [parameter(Mandatory=$false, Position=1)][string] $userAgent,
   [parameter(ValueFromRemainingArguments = $true)][Object[]] $ignoredArguments,
-  [parameter(Mandatory=$false)][hashtable] $options = @{Headers=@{}}
+  [parameter(Mandatory=$false)][hashtable] $options = @{}
 )
 
   Write-FunctionCallLogMessage -Invocation $MyInvocation -Parameters $PSBoundParameters
